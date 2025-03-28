@@ -25,12 +25,12 @@
 
 4. Subgrouping MDD Patients
   -	Clustering:
-    -	 Features: FOOOF parameters (CFs, exponent, offset).
+    1.	 Features: FOOOF parameters (CFs, exponent, offset).
       -	Center frequency (e.g. exact gamma peak at 39, 40 or 41 Hz)
       -	Peak power for the different frequency bands
       -	Bandwith
-    -	Method: K-means clustering (test 2–4 clusters).
-    -	Optimize: Use elbow method or silhouette score.
+    2.	Method: K-means clustering (test 2–4 clusters).
+    3.	Optimize: Use elbow method or silhouette score.
   -	Validation: Compare PSD band power (e.g., theta, alpha) across clusters.
   -	Output: Subgroups (e.g., high-theta/steep-exponent vs. low-alpha/flat-exponent).
   - Subgrouping Impact: Cluster based on these (e.g., k-means with theta power, gamma power, exponent).

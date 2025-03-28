@@ -1,10 +1,10 @@
 # Step-by-Step Plan
 1. Preprocessing
   -	Preprocessing:
-    ○	Filter: 0.5–50 Hz bandpass to remove noise (e.g., 60 Hz interference).
-    ○	Artifact Removal: Use ICA to clean out blinks, muscle twitches, etc.
-    ○	Proposed Segmentation: Divide into 2-second epochs (300 total, or ~600 with 50% overlap) for stable PSD estimates.
-    ○	Quality Check: Reject epochs with noisy data
+    -	Filter: 0.5–50 Hz bandpass to remove noise (e.g., 60 Hz interference).
+    -	Artifact Removal: Use ICA to clean out blinks, muscle twitches, etc.
+    -	Proposed Segmentation: Divide into 2-second epochs (300 total, or ~600 with 50% overlap) for stable PSD estimates.
+    -	Quality Check: Reject epochs with noisy data
 2. Power Spectral Density (PSD) Calculation
   -	Purpose: Quantify power in bands (delta: 1–4 Hz, theta: 4–8 Hz, alpha: 8–12 Hz, beta: 13–30 Hz, gamma: 30–50 Hz) during rest.
   -	Windowing: choose a windowing technique
@@ -25,12 +25,12 @@
 
 4. Subgrouping MDD Patients
   -	Clustering:
-    ○	 Features: FOOOF parameters (CFs, exponent, offset).
+    -	 Features: FOOOF parameters (CFs, exponent, offset).
       -	Center frequency (e.g. exact gamma peak at 39, 40 or 41 Hz)
       -	Peak power for the different frequency bands
       -	Bandwith
-    ○	Method: K-means clustering (test 2–4 clusters).
-    ○	Optimize: Use elbow method or silhouette score.
+    -	Method: K-means clustering (test 2–4 clusters).
+    -	Optimize: Use elbow method or silhouette score.
   -	Validation: Compare PSD band power (e.g., theta, alpha) across clusters.
   -	Output: Subgroups (e.g., high-theta/steep-exponent vs. low-alpha/flat-exponent).
   - Subgrouping Impact: Cluster based on these (e.g., k-means with theta power, gamma power, exponent).
